@@ -1,0 +1,18 @@
+JWT-json web token
+
+there is a problem with stateful tokens
+
+Stateful->we mean that we need to store these tokens in a variable right now(eventually in a database)
+
+the problem is that we need to send request each time to database every time the user wants to hit an authenticated endpoint
+
+solution- JWTs
+
+# JWTs
+
+these are a compact and self contained way to represent information between two parties.they are commonly used for authentication and information exchange in web applications
+JWTs are stateless
+
+npm install jsonwebtoken
+
+https://petal-estimate-4e9.notion.site/Authentincation-a4b43c7cc1d14535a7b5b366080095fa

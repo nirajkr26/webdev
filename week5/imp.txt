@@ -1,6 +1,0 @@
-npm init -y --> used to initialize an empty package.json file
-
-npm install library_name -->used to install external library
-
-
-npx serve- used to serve files over http
