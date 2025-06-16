@@ -1,0 +1,18 @@
+1. route(/api/posts/1)
+2. Body
+{
+    postId:2;
+    title:"This is my tweet"
+}
+3. Headers-Metadata
+4. query parameters(/api/posts?postId=1)
+
+# Middlewares
+-> in express.js,middlewares refers to functions that have access to the request objects ,response object and the next function in the application req-res cycle.
+->modifying req or res objects
+->Ending req-res cycle
+->calling the next middleware function in the stack
+
+
+# cors-cross origin resource sharing
+by default cors are blocked,to use it then we have to use cors middleware
