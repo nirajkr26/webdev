@@ -10,10 +10,17 @@ function App() {
   </div>
 }
 
+
 function Counter() {
+  // this would not work because we cant put raw variable in dynamic content
+  let count=0;
+  function increaseCount() {
+    count=count+1;
+  }
+
   return <div>
-    <h1>1</h1>
-    <button>Increase Count</button>
+    <h1>{count}</h1>
+    <button onClick={increaseCount}>Increase Count</button>
   </div>
 }
 
