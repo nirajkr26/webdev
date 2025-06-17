@@ -1,28 +1,29 @@
 import { useEffect, useState } from "react"
 
-
+//conditional rendering
 function App() {
+  let counterVisible = true;
+
   return <div>
-    {/* rendering counter */}
-    <Counter></Counter>
+    {counterVisible ? <Counter></Counter> : null}
   </div>
 }
 
 
 function Counter() {
-  const [count,setcount]=useState(0);
+  const [count, setcount] = useState(0);
 
   //hooking into lifecycle events of react
 
   //useEffect takes two input function and dependency array
-  useEffect(()=>{
-    setInterval(()=>{
-      setcount(count+1);
-    },1000)
-  },[]);
- 
+  useEffect(() => {
+    setInterval(() => {
+      setcount(count => count + 1);
+    }, 1000)
+  }, []);//dependency array
+
   function increaseCount() {
-    setcount(count+1);
+    setcount(count + 1);
   }
 
   return <div>
