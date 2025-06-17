@@ -2,9 +2,16 @@ import { useEffect, useState } from "react"
 
 //conditional rendering
 function App() {
-  let counterVisible = true;
+  let [counterVisible, setCounterVisible] = useState(true);
+
+  useEffect(() => {
+    setInterval(() => {
+      setCounterVisible(c => !c)
+    }, 5000);
+  }, [])
 
   return <div>
+    <h1>conditional rendering</h1>
     {counterVisible ? <Counter></Counter> : null}
   </div>
 }
@@ -17,10 +24,18 @@ function Counter() {
 
   //useEffect takes two input function and dependency array
   useEffect(() => {
-    setInterval(() => {
+    console.log("on mount");
+    let clock = setInterval(() => {
       setcount(count => count + 1);
     }, 1000)
+
+    return () => {
+      console.log("on unmount");
+      clearInterval(clock);
+    }
   }, []);//dependency array
+
+
 
   function increaseCount() {
     setcount(count + 1);
