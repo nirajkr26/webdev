@@ -1,3 +1,4 @@
+import { useState } from "react"
 
 
 function App() {
@@ -12,10 +13,10 @@ function App() {
 
 
 function Counter() {
-  // this would not work because we cant put raw variable in dynamic content
-  let count=0;
-  function increaseCount() {
-    count=count+1;
+  const [count,setcount]=useState(0);
+
+  const increaseCount=()=>{
+    setcount(count+1);
   }
 
   return <div>
