@@ -1,11 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 function App() {
   return <div>
-    <b>
-      hi there
-    </b>
     {/* rendering counter */}
     <Counter></Counter>
   </div>
@@ -15,20 +12,22 @@ function App() {
 function Counter() {
   const [count,setcount]=useState(0);
 
-  const increaseCount=()=>{
+  //hooking into lifecycle events of react
+
+  //useEffect takes two input function and dependency array
+  useEffect(()=>{
+    setInterval(()=>{
+      setcount(count+1);
+    },1000)
+  },[]);
+ 
+  function increaseCount() {
     setcount(count+1);
   }
-  const decreaseCount=()=>{
-    setcount(count-1);
-  }
-  const resetCount=()=>{
-    setcount(0);
-  }
+
   return <div>
     <h1>{count}</h1>
     <button onClick={increaseCount}>Increase Count</button>
-    <button onClick={decreaseCount}>Decrease Count</button>
-    <button onClick={resetCount}>Reset Count</button>
   </div>
 }
 
