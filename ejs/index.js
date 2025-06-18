@@ -9,12 +9,19 @@ app.get("/", (req, res) => {
     res.render("home.ejs");
 })
 
-app.get("/interpolation",(req,res)=>{
+app.get("/interpolation", (req, res) => {
     res.render("interpolation.ejs");
 })
 
 app.get("/hello", (req, res) => {
     res.send("hello world");
+})
+
+app.get("/rolldice", (req, res) => {
+    let diceVal = Math.floor(Math.random() * 6) + 1;
+    res.render("rolldice.ejs", {
+        diceVal
+    });
 })
 
 app.listen(3000);
