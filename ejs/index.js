@@ -24,10 +24,12 @@ app.get("/rolldice", (req, res) => {
     });
 })
 
-app.get("/ig/:username",(req,res)=>{
-    let {username}=req.params;
-    res.render("instagram.ejs",{
-        username
+app.get("/ig/:username", (req, res) => {
+    const followers = ["jhon", "bob", "shyam", "adam"]
+    let { username } = req.params;
+    res.render("instagram.ejs", {
+        username,
+        followers
     })
 })
 
