@@ -2,48 +2,41 @@ import { useEffect, useState } from "react"
 
 //conditional rendering
 function App() {
-  let [counterVisible, setCounterVisible] = useState(true);
-
-  useEffect(() => {
-    setInterval(() => {
-      setCounterVisible(c => !c)
-    }, 5000);
-  }, [])
+  const [count, setCount] = useState(0);
+  const [count2, setCount2] = useState(0);
+  let increase = () => {
+    setCount(c => c + 1);
+  }
+  let decrease = () => {
+    setCount2(c => c - 1);
+  }
 
   return <div>
-    <h1>conditional rendering</h1>
-    {counterVisible ? <Counter></Counter> : null}
+    <Counter count={count} count2={count2} />
+    <button onClick={increase}>Increase Count</button>
+    <button onClick={decrease}>Decrease Count</button>
   </div>
 }
 
 
-function Counter() {
-  const [count, setcount] = useState(0);
+function Counter(props) {
 
-  //hooking into lifecycle events of react
-
-  //useEffect takes two input function and dependency array
   useEffect(() => {
     console.log("on mount");
-    let clock = setInterval(() => {
-      setcount(count => count + 1);
-    }, 1000)
 
     return () => {
-      console.log("on unmount");
-      clearInterval(clock);
+      console.log("unmount");
     }
-  }, []);//dependency array
+  }, [])
 
-
-
-  function increaseCount() {
-    setcount(count + 1);
-  }
+  useEffect(() => {
+    console.log("count has changed");
+  }, [props.count,props.count2])
 
   return <div>
-    <h1>{count}</h1>
-    <button onClick={increaseCount}>Increase Count</button>
+    Counter1 {props.count}
+    <br />
+    Counter2 {props.count2}
   </div>
 }
 
