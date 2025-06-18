@@ -9,6 +9,10 @@ app.get("/", (req, res) => {
     res.render("home.ejs");
 })
 
+app.get("/interpolation",(req,res)=>{
+    res.render("interpolation.ejs");
+})
+
 app.get("/hello", (req, res) => {
     res.send("hello world");
 })
