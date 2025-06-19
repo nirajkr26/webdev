@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-const posts = [
+let posts = [
     {
         "id": uuidv4(),
         "username": "niraj",
@@ -78,6 +78,12 @@ app.get("/posts/:id/edit",(req,res)=>{
     res.render("edit",{
         post
     })
+})
+
+app.delete("/posts/:id",(req,res)=>{
+    let { id } = req.params;
+    posts=posts.filter(post=>post.id!=id);
+    res.redirect("/posts");
 })
 
 

@@ -24,6 +24,9 @@
 
             <button><a href="/posts/<%=post.id%>" style="text-decoration: none;">View in detail</a></button>
             <button><a href="/posts/<%=post.id%>/edit" style="text-decoration: none;">Edit post</a></button>
+            <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+                <button>Delete Post</button>
+            </form>
         </div>
         <%}%>
 </body>
