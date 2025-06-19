@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posts</title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
     <h1>All Posts</h1>
     <hr>
@@ -13,12 +15,17 @@
     <hr>
     <%for(let post of posts){%>
         <div>
-            <h2>@<%=post.username%></h2>
-            <h3><%=post.content%></h3>
+            <h2>@<%=post.username%>
+            </h2>
+            <h3>
+                <%=post.content%>
+            </h3>
             <br>
 
             <button><a href="/posts/<%=post.id%>" style="text-decoration: none;">View in detail</a></button>
+            <button><a href="/posts/<%=post.id%>/edit" style="text-decoration: none;">Edit post</a></button>
         </div>
-    <%}%>
+        <%}%>
 </body>
+
 </html>
