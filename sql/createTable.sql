@@ -25,6 +25,6 @@ UNIQUE--column must be unique
 default--column must have a default value
 check--column must satisfy a condition
 
-PRIMARY Key--makes a column unique and not null but used only for one
+PRIMARY Key--makes a column unique and not null but used only for one.there is only 1 PK
 
-Foreign Key --prevent actions that would destroy links between tables 
+Foreign Key --prevent actions that would destroy links between tables .There can be multiple FKs .FKs can have duplicate and null values
