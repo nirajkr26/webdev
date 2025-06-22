@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import Fetch from './fetch.jsx'
 import Card from './card.jsx'
+import Items from './items.jsx'
 
 createRoot(document.getElementById('root')).render(
     <>
@@ -12,6 +13,8 @@ createRoot(document.getElementById('root')).render(
         <Fetch />
         <br /><hr /><br />
         <Card />
+        <br /><hr /><br />
+        <Items/>
     </>
 
 )
