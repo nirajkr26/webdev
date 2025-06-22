@@ -2,15 +2,18 @@
 
 
 
-function Card(){
-    return <div>
-        <Passing innerContent={"hi there"}/>
+function Card() {
+    return <div style={{ display: "flex" }}>
+        <Passing children={"hi there"} />
+        <Passing>
+            <div style={{ color: "green" }}> what do you want to post <br /><input type="text" /></div>
+        </Passing>
     </div>
 }
 
-function Passing({innerContent}){
-    return <div style={{backgroundColor:"black",color:"white",borderRadius:10}}>
-        {innerContent}
+function Passing({ children }) {
+    return <div style={{ backgroundColor: "black", color: "white", borderRadius: 10, padding: 10, margin: 10 }}>
+        {children}
     </div>
 }
 
