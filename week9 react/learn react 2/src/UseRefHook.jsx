@@ -1,5 +1,7 @@
 import { useRef } from "react";
 
+//useRef hook
+//refernce to a value,such that when that value changes it does not re-render
 
 function UseRefHook(){
     const inputRef=useRef();
