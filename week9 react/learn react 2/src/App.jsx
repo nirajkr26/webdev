@@ -22,16 +22,16 @@ function App() {
 }
 
 function Layout() {
-  return <div style={{height:"100vh"}}>
+  return <div style={{ height: "100vh" }}>
     <Link to="/">Home</Link>||
     <Link to="/neet/online-coaching-class-11">Class 11</Link>||
     <Link to="/neet/online-coaching-class-12">Class 12</Link>
 
-    <div style={{height:"85vh"}}>
+    <div style={{ height: "85vh" }}>
       <Outlet />
     </div>
-    <div style={{backgroundColor:"white",color:"Black",height:"5vh" }}>Footer</div>
-    
+    <div style={{ backgroundColor: "white", color: "Black", height: "5vh" }}>Footer</div>
+
   </div>
 }
 
