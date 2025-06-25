@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-
+// rolling up the state - unoptimal re-renders
 function App() {
   return (
     <div>
