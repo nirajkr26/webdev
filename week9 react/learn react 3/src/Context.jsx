@@ -3,16 +3,25 @@ import "./app.css"
 
 const BulbContext = createContext();
 
-function Context() {
+function BulbProvider({ children }) {
     const [bulbOn, setBulbOn] = useState(true)
+
+    return (
+        <BulbContext.Provider value={{
+            bulbOn,
+            setBulbOn
+        }}>
+            {children}
+        </BulbContext.Provider >
+    )
+}
+
+function Context() {
     return (
         <div>
-            <BulbContext.Provider value={{
-                bulbOn,
-                setBulbOn
-            }}>
+            <BulbProvider>
                 <LightBulb />
-            </BulbContext.Provider>
+            </BulbProvider>
         </div>
     )
 }
@@ -26,7 +35,7 @@ function LightBulb() {
 }
 
 function BulbState() {
-    const bulbOn  = useContext(BulbContext).bulbOn
+    const bulbOn = useContext(BulbContext).bulbOn
     return <div>
         {bulbOn ? "Bulb is On" : "Bulb is off"}
     </div>
