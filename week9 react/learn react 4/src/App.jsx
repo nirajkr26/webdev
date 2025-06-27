@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import './App.css'
 
@@ -21,8 +20,16 @@ function useCounter() {
 }
 
 function App() {
+  return <div>
+    <Counter />
+    <Counter />
+    <Counter />
+  </div>
+}
+
+function Counter() {
   const [count, increment] = useCounter();
-  
+
   return <div>
     <button onClick={increment}>Increase {count}</button>
   </div>
