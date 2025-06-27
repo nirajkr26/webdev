@@ -18,18 +18,22 @@ export function usePostTitle() {
 
 export function useFetch(url) {
     const [finalData, setFinalData] = useState({});
+    const [loading, setLoad] = useState(true);
 
     async function getDetails() {
+        setLoad(true);
         const response = await fetch(url);
         const json = await response.json();
         setFinalData(json);
+        setLoad(false);
     }
 
     useEffect(() => {
         getDetails()
     }, [url])
 
-    return (
-        finalData
-    )
+    return [
+        finalData,
+        loading
+    ]
 }
