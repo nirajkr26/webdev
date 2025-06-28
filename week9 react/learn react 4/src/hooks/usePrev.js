@@ -10,3 +10,5 @@ export function usePrev(value){
 
     return ref.current;
 }
+
+//it returns first then effect will be called later

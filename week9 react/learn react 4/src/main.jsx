@@ -3,6 +3,7 @@ import './index.css'
 import App from './App.jsx'
 import Fetch from './Fetch.jsx'
 import Prev from './Prev.jsx'
+import Debounce from './Debounce.jsx'
 
 createRoot(document.getElementById('root')).render(
     <>
@@ -12,5 +13,8 @@ createRoot(document.getElementById('root')).render(
         <hr />
         <br />
         <Prev />
+        <br />
+        <hr />
+        <Debounce />
     </>
 )
