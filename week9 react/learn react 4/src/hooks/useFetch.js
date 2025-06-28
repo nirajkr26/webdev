@@ -32,6 +32,14 @@ export function useFetch(url) {
         getDetails()
     }, [url])
 
+    useEffect(() => {
+        const intervalId = setInterval(getDetails, 10000)
+        
+        return () => {
+            clearInterval(intervalId)
+        }
+    }, [])
+
     return [
         finalData,
         loading
