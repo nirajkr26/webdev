@@ -1,8 +1,12 @@
-const connection = mysql.createConnection({
-//     host: "127.0.0.1",
-//     user: "root",
-//     password: "",
-//     database: "learn"
-// })
-
-// let insertQuery = "Insert into users (id,username,email,password) values (?,?,?,?)";
+try {
+    //     connection.query(q, (err, result) => {
+    //         if (err) throw err;
+    //         console.log(result[0]["count(*)"]);
+    //         res.render("home.ejs", {
+    //             count: result[0]["count(*)"]
+    //         })
+    //     })
+    // } catch (e) {
+    //     console.log(e);
+    //     res.send("some error in DB");
+    // }
