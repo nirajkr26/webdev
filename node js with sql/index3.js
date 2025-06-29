@@ -30,8 +30,6 @@ try {
     console.log(e);
 }
 
-connection.end();
-
 function createRandomUser() {
     return [
         faker.string.uuid(),
@@ -65,7 +63,19 @@ app.get("/", (req, res) => {
 })
 
 app.get("/user", (req, res) => {
-
+    let q="select * from user";
+    try {
+        connection.query(q, (err, result) => {
+            if (err) throw err;
+            
+            res.render("show.ejs", {
+                users: result
+            })
+        })
+    } catch (e) {
+        console.log(e);
+        res.send("some error in DB");
+    }
 })
 
 app.patch("/user/:id", (req, res) => {
@@ -79,6 +89,5 @@ app.post("/user", (req, res) => {
 app.delete("/user/:id", (req, res) => {
 
 })
-
 
 app.listen(port)
