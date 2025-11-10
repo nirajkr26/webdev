@@ -11,7 +11,7 @@ const port = 3000;
 
 app.use(express.json());
 
-mongoose.connect("")
+mongoose.connect("mongodb+srv://admin:Trader%402006@cluster0.jez4wnt.mongodb.net/Todo")
 
 app.post("/signup", async function (req, res) {
     const name = req.body.name;
