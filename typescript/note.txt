@@ -1,0 +1,4 @@
+npm i typescript
+npx tsc -b   // compiling
+
+
