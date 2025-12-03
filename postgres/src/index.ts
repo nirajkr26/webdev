@@ -6,7 +6,7 @@ app.use(express.json())
 
 const pgClient2 = new Client({
     user: "neondb_owner",
-    password: "",
+    password: "npg_norHdI80xtjc",
     port: 5432,
     host: "ep-empty-union-adym5ek5-pooler.c-2.us-east-1.aws.neon.tech",
     database: "neondb",
