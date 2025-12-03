@@ -34,7 +34,9 @@ const handler = NextAuth({
       clientId: "sfdsaf",
       clientSecret: 'sjfksd'
     })
-  ]
+  ],
+  secret:process.env.NEXTAUTH_SECRET
+  
 });
 
 export { handler as GET, handler as POST }
